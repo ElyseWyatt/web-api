@@ -6,8 +6,8 @@ class AddUser extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      userName: '',
-      userEmail: ''
+      name: '',
+      email: ''
     }
     this.red = false
     this.handleChange = this.handleChange.bind(this)
@@ -47,11 +47,11 @@ class AddUser extends React.Component {
     return (
       <form>
         <div>
-          Name: <input name='userName' id='userName' type='text' onChange={this.handleChange} value={this.state.name} />
+          Name: <input name='name' id='name' type='text' onChange={this.handleChange} value={this.state.name} />
         </div>
         <div>
             <label>Email:</label>
-            <input type='text' name='userEmail' id='userId' onChange={this.handleChange} value={this.state.email} />
+            <input type='text' name='email' id='id' onChange={this.handleChange} value={this.state.email} />
         </div>
         <button type='button' onClick={this.handleClick}>Add User</button>
       </form>

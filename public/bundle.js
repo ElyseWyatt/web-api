@@ -25519,9 +25519,13 @@ var UserList = function (_React$Component) {
                     null,
                     this.state.users.map(function (item, key) {
                         return _react2.default.createElement(
-                            'li',
-                            { key: item.id },
-                            item.name
+                            _reactRouterDom.Link,
+                            { to: '/users/' + item.id },
+                            _react2.default.createElement(
+                                'li',
+                                { key: item.id },
+                                item.name
+                            )
                         );
                     })
                 )
@@ -25576,8 +25580,8 @@ var AddUser = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (AddUser.__proto__ || Object.getPrototypeOf(AddUser)).call(this, props));
 
     _this.state = {
-      userName: '',
-      userEmail: ''
+      name: '',
+      email: ''
     };
     _this.red = false;
     _this.handleChange = _this.handleChange.bind(_this);
@@ -25619,7 +25623,7 @@ var AddUser = function (_React$Component) {
           'div',
           null,
           'Name: ',
-          _react2.default.createElement('input', { name: 'userName', id: 'userName', type: 'text', onChange: this.handleChange, value: this.state.name })
+          _react2.default.createElement('input', { name: 'name', id: 'name', type: 'text', onChange: this.handleChange, value: this.state.name })
         ),
         _react2.default.createElement(
           'div',
@@ -25629,7 +25633,7 @@ var AddUser = function (_React$Component) {
             null,
             'Email:'
           ),
-          _react2.default.createElement('input', { type: 'text', name: 'userEmail', id: 'userId', onChange: this.handleChange, value: this.state.email })
+          _react2.default.createElement('input', { type: 'text', name: 'email', id: 'id', onChange: this.handleChange, value: this.state.email })
         ),
         _react2.default.createElement(
           'button',
@@ -25693,7 +25697,7 @@ var UserInfo = function (_React$Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            _superagent2.default.get('users/' + this.props.match.params.id).then(function (res) {
+            _superagent2.default.get('/users/' + this.props.match.params.id).then(function (res) {
                 _this2.setState({
                     user: res.body.user
                 });
@@ -25714,7 +25718,7 @@ var UserInfo = function (_React$Component) {
                         _react2.default.createElement(
                             'label',
                             null,
-                            'name:'
+                            'Name:'
                         ),
                         ' ',
                         this.state.user.name
@@ -25725,7 +25729,7 @@ var UserInfo = function (_React$Component) {
                         _react2.default.createElement(
                             'label',
                             null,
-                            'email:'
+                            'Email:'
                         ),
                         ' ',
                         this.state.user.email

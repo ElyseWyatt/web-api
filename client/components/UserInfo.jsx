@@ -12,7 +12,7 @@ class UserInfo extends React.Component {
 
     componentDidMount() {
         request
-        .get(`users/${this.props.match.params.id}`)
+        .get(`/users/${this.props.match.params.id}`)
         .then(res => {
             this.setState({
                 user: res.body.user
@@ -24,10 +24,10 @@ class UserInfo extends React.Component {
             <div>
                 <ul>
                     <li>
-                        <label>name:</label> {this.state.user.name}
+                        <label>Name:</label> {this.state.user.name}
                     </li>
                     <li>
-                        <label>email:</label> {this.state.user.email}
+                        <label>Email:</label> {this.state.user.email}
                     </li>
                 </ul>
             </div>

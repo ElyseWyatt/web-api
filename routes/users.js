@@ -25,5 +25,16 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.post('/addUser', (req, res) => {
+  const newUser = {
+    name: req.body.name,
+    email: req.body.email
+  }
+  db.addUser(newUser)
+  .then(id => {
+    res.status(200).send()
+  })
+})
+
 module.exports = router
 

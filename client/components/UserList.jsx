@@ -25,8 +25,9 @@ class UserList extends React.Component {
         <div>
             <h1>User List</h1>
         <ul>
+        
             {this.state.users.map((item, key) => {
-            return <li key={item.id}>{item.name}</li>
+            return <Link to={'/users/'+item.id}><li key={item.id}>{item.name}</li></Link>
               })}
         </ul>
         </div>

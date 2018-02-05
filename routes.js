@@ -4,10 +4,14 @@ const router = express.Router()
 
 const userData = {
     users: [
-    {id: 1, name: 'Elyse'},
+
+}    {id: 1, name: 'Elyse'},
     {id: 2, name: 'Steve'}
  ]
-}
+
+router.get('/', (req, res) => {
+    db.getUsers
+})
 
 router.get('/users', (req, res) => {
     res.json(userData)
