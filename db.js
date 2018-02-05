@@ -4,7 +4,7 @@ const connection = require('knex')(config)
 
 module.exports = {
   getUsers,
-  getUser
+  getUser,
 }
 
 function getUsers (testDb) {
